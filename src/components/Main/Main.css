@@ -1,0 +1,16 @@
+/* .section__content {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 20px;
+} */
+
+.hero {
+  background-image: url("../../images/background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.results {
+  background-color: #F5F6F7;
+}

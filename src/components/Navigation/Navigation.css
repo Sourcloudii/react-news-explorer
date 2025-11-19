@@ -1,0 +1,44 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  gap: 34px;
+}
+
+.navigation__link {
+  width: 68px;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 18px;
+  border-bottom: 3px solid #FFF;
+  display: flex;
+  justify-content: center;
+  padding: 30px 10px 26px;
+}
+
+.navigation__header-btn {
+  width: 176px;
+  height: 48px;
+  background: none;
+  border: 1px solid #FFF;
+  border-radius: 100px;
+  color: #FFF;
+  font-size: 18px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.navigation-btn__container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navigation__header-btn-user {
+  background: none;
+  border: none;
+  color: #FFF;
+  font-size: 18px;
+  padding: 0 15px 0 0;
+  cursor: pointer;
+}

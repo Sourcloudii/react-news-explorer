@@ -1,0 +1,26 @@
+.about__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  padding: 80px 0;
+}
+
+.about__img {
+  width: 464px;
+  height: 464px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.about__text__container {
+  max-width: 600px;
+}
+
+.about__title {
+}
+
+.about__subtitle {
+}
