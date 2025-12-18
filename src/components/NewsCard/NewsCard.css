@@ -1,0 +1,85 @@
+.article__item {
+  width: 400px;
+  height: 576px;
+  border-radius: 16px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.article__item-container {
+  cursor: pointer;
+  position: relative;
+}
+
+.article__bookmark-container {
+  height: 40px;
+  width: 227px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border-radius: 8px;
+  gap: 5px;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.article__bookmark-btn {
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.article__login-alert {
+  width: 142px;
+  height: 18px;
+  padding: 11px 20px;
+  margin: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 10px 22px 0px #3b4a741a;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  text-align: center;
+  align-content: center;
+}
+
+.article__img {
+  width: 400px;
+  height: 272px;
+  object-fit: cover;
+}
+
+.article__text-container {
+  padding: 20px 24px 24px;
+  color: #1a1b22;
+}
+
+.article__date {
+  margin: 0;
+  color: #b6bcbf;
+}
+
+.article__title {
+  margin: 12px 0 16px;
+  max-height: 60px;
+  overflow: hidden;
+  font-family: Roboto Slab;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.article__content {
+  margin: 0;
+  line-height: 22px;
+}
+
+.article__source {
+  margin: 18px 0 0;
+  color: #b6bcbf;
+  text-transform: uppercase;
+}
