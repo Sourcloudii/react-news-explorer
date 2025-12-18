@@ -1,0 +1,22 @@
+.no-results__content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.no-results__img {
+  width: 275px;
+  height: 275px;
+  margin: 0 auto;
+}
+
+.no-results__title {
+  color: #2f71e5;
+  margin: 0 0 25px;
+}
+
+.no-results__text {
+  margin: 0;
+  opacity: 30%;
+}
