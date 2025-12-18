@@ -6,11 +6,12 @@ function About() {
     <div className="about__container">
       <img src={me} alt="Picture of creator" className="about__img" />
       <div className="about__text__container">
-        <h2 className="about__title">About News Explorer</h2>
+        <h2 className="about__title">About the author</h2>
         <p className="about__subtitle">
-          News Explorer is a web application that allows users to search for and
-          save news articles from various sources. It provides a user-friendly
-          interface to explore the latest news on any topic of interest.
+          Hi! I'm Ken, a full-stack developer who studied at TripleTens coding bootcamp. I am
+          fluent in HTML/CSS/JavaScript, along with React.js, Node.js and express.js. I am
+          currently working on side projects including TripleTen's final proojcet, this news
+          explorer app.
         </p>
       </div>
     </div>

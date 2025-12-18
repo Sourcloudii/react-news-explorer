@@ -1,8 +1,7 @@
 .about__container {
   display: flex;
+  gap: 56px;
   justify-content: center;
-  align-items: center;
-  gap: 48px;
   padding: 80px 0;
 }
 
@@ -17,10 +16,19 @@
 
 .about__text__container {
   max-width: 600px;
+  margin-top: 51px;
 }
 
 .about__title {
+  color: #1a1b22;
+  font-family: Roboto Slab;
+  font-weight: 400;
+  font-size: 40px;
+  margin: 0 0 24px;
 }
 
 .about__subtitle {
+  margin: 0;
+  font-size: 18px;
+  line-height: 24px;
 }
