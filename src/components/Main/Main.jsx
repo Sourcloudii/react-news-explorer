@@ -4,7 +4,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import About from "../About/About";
 import Preloader from "../Preloader/Preloader";
 import NewsCard from "../NewsCard/NewsCard";
-import notFound from "../../images/notFound.svg";
+import NoResults from "../NoResults/NoResults";
 
 function Main({ handleSearchSubmit, articles, isLoading, handleSaveArticle }) {
   const [visibleArticles, setVisibleArticles] = useState(3);
@@ -35,10 +35,8 @@ function Main({ handleSearchSubmit, articles, isLoading, handleSaveArticle }) {
             </section>
           ) : articles.length === 0 ? (
             <section className="no-results">
-              <div className="section__content no-results__content">
-                <img src={notFound} alt="not found" className="no-results__img" />
-                <h1 className="no-results__title">Well, this is awkward</h1>
-                <p className="no-results__text">No results were found for that search</p>
+              <div className="section__content">
+                <NoResults />
               </div>
             </section>
           ) : (
@@ -47,7 +45,11 @@ function Main({ handleSearchSubmit, articles, isLoading, handleSaveArticle }) {
                 <p className="results__text">Search results</p>
                 <ul className="results__list">
                   {articles.slice(0, visibleArticles).map((item) => (
-                    <NewsCard key={item.url} article={item} handleSaveArticle={handleSaveArticle} />
+                    <NewsCard
+                      key={item.url}
+                      article={item}
+                      handleSaveArticle={handleSaveArticle}
+                    />
                   ))}
                 </ul>
                 {visibleArticles < articles.length && (
