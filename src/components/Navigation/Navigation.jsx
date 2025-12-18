@@ -1,102 +1,69 @@
 import "./Navigation.css";
 import logoutdark from "../../images/logout-dark.svg";
 import logoutLight from "../../images/logout-light.svg";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CurrentUserContext } from "../../context/currentUserContent.js";
 
-function Navigation({ isLoggedIn = false, user = "Ken" }) {
-  const location = useLocation();
-
-  return (
-    <div className="navigation">
-      <Link to="/" className="navigation__link">
-        Home
-      </Link>
-      {isLoggedIn && (
-        <Link to="/saved-news" className="navigation__link">
-          Saved Articles
+export default function Navigation({ path, handleLoginModal, handleLogout }) {
+  const { isLoggedIn, user } = useContext(CurrentUserContext);
+  if (path === "/") {
+    return (
+      <div className="navigation">
+        <Link to="/" className="navigation__link navigation__link-active-light">
+          Home
         </Link>
-      )}
-      <div className="navigation__logout-container">
-        {isLoggedIn ? (
-          <div className="navigation-btn__container">
-            <button className="navigation__header-btn-user">{user}</button>
-            <img
-              src={location.pathname === "/" ? logoutLight : logoutdark}
-              alt="Logout Icon"
-              className="navigation__header-btn-img"
-            />
-          </div>
-        ) : (
-          <button className="navigation__header-btn">Sign in</button>
+        {isLoggedIn && (
+          <Link to="/saved-news" className="navigation__link">
+            Saved articles
+          </Link>
         )}
+        <div className="navigation__logout-container">
+          {isLoggedIn ? (
+            <div className="navigation-btn__container" onClick={handleLogout}>
+              <button className="navigation__header-btn-user">{user.name}</button>
+              <img
+                src={path === "/" ? logoutLight : logoutdark}
+                alt="Logout Icon"
+                className="navigation__header-btn-img"
+              />
+            </div>
+          ) : (
+            <button className="navigation__header-btn" onClick={handleLoginModal}>
+              Sign in
+            </button>
+          )}
+        </div>
       </div>
-    </div>
-  );
-  // if (location.pathname === "/") {
-  // return (
-  //   <div className="navigation navigation-transparent">
-  //     <Link to="/" className="navigation__link navigation-transparent__link">
-  //       Home
-  //     </Link>
-  //     <Link
-  //       to="/saved-news"
-  //       className="navigation__link navigation-transparent__link"
-  //     >
-  //       Saved Articles
-  //     </Link>
-  //     <div className="navigation__logout-container">
-  //       {isLoggedIn ? (
-  //         <div className="header-btn__container">
-  //           <button className="navigation__header-btn navigation-transparent__header__btn">
-  //             {user}
-  //           </button>
-  //           <img
-  //             src={logoutLight}
-  //             alt="Logout Icon"
-  //             className="navigation__header-btn-img navigation-transparent__header-btn-img"
-  //           />
-  //         </div>
-  //       ) : (
-  //         <button className="navigation__header-btn navigation-transparent__header__btn">
-  //           Sign in
-  //         </button>
-  //       )}
-  //     </div>
-  //   </div>
-  // );
-  // } else if (location.pathname === "/saved-news") {
-  //   return (
-  //     <div className="navigation navigation-solid">
-  //       <Link to="/" className="navigation__link navigation-solid__link">
-  //         Home
-  //       </Link>
-  //       <Link
-  //         to="/saved-news"
-  //         className="navigation__link navigation-solid__link"
-  //       >
-  //         Saved Articles
-  //       </Link>
-  //       <div className="navigation__logout-container">
-  //         {isLoggedIn ? (
-  //           <div className="header-btn__container">
-  //             <button className="navigation__header-btn navigation-solid__header-btn">
-  //               {user}
-  //             </button>
-  //             <img
-  //               src={logoutdark}
-  //               alt="Logout Icon"
-  //               className="navigation__header-btn-img navigation-solid__header-btn-img"
-  //             />
-  //           </div>
-  //         ) : (
-  //           <button className="navigation__header-btn navigation-solid__header-btn">
-  //             Sign in
-  //           </button>
-  //         )}
-  //       </div>
-  //     </div>
-  // );
-  // }
+    );
+  } else if (path === "/saved-news") {
+    return (
+      <div className="navigation">
+        <Link to="/" className="navigation__link dark-text">
+          Home
+        </Link>
+        {isLoggedIn && (
+          <Link to="/saved-news" className="navigation__link navigation__link-active-dark">
+            Saved articles
+          </Link>
+        )}
+        <div className="navigation__logout-container">
+          {isLoggedIn ? (
+            <div className="navigation-btn__container navigation-btn__container-dark" onClick={handleLogout}>
+              <button className="navigation__header-btn-user dark-text">{user.name}</button>
+              <img
+                src={path === "/" ? logoutLight : logoutdark}
+                alt="Logout Icon"
+                className="navigation__header-btn-img"
+              />
+            </div>
+          ) : (
+            <button className="navigation__header-btn" onClick={handleLoginModal}>
+              Sign in
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  }
 }
-
-export default Navigation;
