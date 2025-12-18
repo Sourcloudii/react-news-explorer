@@ -11,7 +11,7 @@
   max-width: 608px;
   margin: 0 auto;
   text-align: center;
-  color: #FFF;
+  color: #fff;
 }
 
 .searchForm__title {
@@ -41,14 +41,14 @@
   border-radius: 100px;
   width: 100%;
   padding: 0 0 0 24px;
-  border: 1px solid #D1D2D6;
-  color: #1A1B22;
+  border: 1px solid #d1d2d6;
+  color: #1a1b22;
   line-height: 22px;
 }
 
 .searchForm__field-btn {
   color: #fff;
-  background-color: #2F71E5;
+  background-color: #2f71e5;
   position: absolute;
   right: 0;
   border-radius: 100px;
@@ -59,4 +59,14 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
+}
+
+.searchForm__field-btn:hover {
+  cursor: pointer;
+  background-color: #347eff;
+}
+
+.searchForm__field-btn:active {
+  background-color: #2A65CC;
+
 }
