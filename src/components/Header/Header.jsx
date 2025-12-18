@@ -1,9 +1,10 @@
 import "./Header.css";
-import logoLight from "../../images/logo-light.svg";
-import Navigation from "../Navigation/Navigation";
 import { Link, useLocation } from "react-router-dom";
+import logoLight from "../../images/logo-light.svg";
+import logoDark from "../../images/logo-dark.svg";
+import Navigation from "../Navigation/Navigation";
 
-function Header() {
+function Header({ handleLoginModal, handleLogout }) {
   const location = useLocation();
 
   if (location.pathname == "/") {
@@ -11,28 +12,28 @@ function Header() {
       <header className="header">
         <div className="header__content">
           <Link to="/">
-            <img
-              src={logoLight}
-              alt="News Explorer Logo"
-              className="header__logo"
-            />
+            <img src={logoLight} alt="News Explorer Logo" className="header__logo" />
           </Link>
-          <Navigation />
+          <Navigation
+            path={location.pathname}
+            handleLoginModal={handleLoginModal}
+            handleLogout={handleLogout}
+          />
         </div>
       </header>
     );
   } else if (location.pathname == "/saved-news") {
     return (
-      <header className="header">
+      <header className="header header_dark-theme">
         <div className="header__content">
           <Link to="/">
-            <img
-              src={logoLight}
-              alt="News Explorer Logo"
-              className="header__logo"
-            />
+            <img src={logoDark} alt="News Explorer Logo" className="header__logo" />
           </Link>
-          <Navigation />
+          <Navigation
+            path={location.pathname}
+            handleLoginModal={handleLoginModal}
+            handleLogout={handleLogout}
+          />
         </div>
       </header>
     );
