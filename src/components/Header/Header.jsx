@@ -11,7 +11,7 @@ function Header({ handleLoginModal, handleLogout }) {
     return (
       <header className="header">
         <div className="header__content">
-          <Link to="/">
+          <Link to="/" className="header__logo-link">
             <img src={logoLight} alt="News Explorer Logo" className="header__logo" />
           </Link>
           <Navigation
@@ -26,7 +26,7 @@ function Header({ handleLoginModal, handleLogout }) {
     return (
       <header className="header header_dark-theme">
         <div className="header__content">
-          <Link to="/">
+          <Link to="/" className="header__logo-link">
             <img src={logoDark} alt="News Explorer Logo" className="header__logo" />
           </Link>
           <Navigation
