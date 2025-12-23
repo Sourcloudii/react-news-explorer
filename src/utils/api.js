@@ -34,6 +34,7 @@ export function saveArticle(article, userId) {
     resolve({
       _id: "65f7371e7bce9e7d331b11a0",
       owner: userId,
+      keyword: article.keyword,
       url: article.url,
       title: article.title,
       imageUrl: article.urlToImage,
