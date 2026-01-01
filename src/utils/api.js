@@ -17,7 +17,7 @@ export function getItems() {
           "Every week at The Verge, were tracking whats happening with Trump Mobiles promised and yet undelivered Android phone. Why? Because we cover phones. We also cover vaporware, which the T1 Phone 8002 (g… [+3568 chars]",
         description:
           "Every week at The Verge, we’re tracking what’s happening with Trump Mobile’s promised and yet undelivered Android phone. Why? Because we cover phones. We also cover vaporware, which the T1 Phone 8002 (gold version) very well may be. The smartphone has now bee…",
-        keyword: "Trump",
+        keyword: "Android",
         publishedAt: "2025-12-12T15:39:59Z",
         source: { id: "the-verge", name: "The Verge" },
         title: "We’re still talking about the Trump phone",
