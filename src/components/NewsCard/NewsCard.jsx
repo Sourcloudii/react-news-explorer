@@ -51,6 +51,7 @@ export default function NewsCard({ article, handleSaveArticle }) {
           )}
           <img src={handleHover()} alt="bookmark" className="article__bookmark-btn" />
         </div>
+        <p className="article__keyword">{article.keyword}</p>
         <img src={article.urlToImage} alt={article.title} className="article__img" />
         <div className="article__text-container">
           <p className="article__date">{formattedDate}</p>

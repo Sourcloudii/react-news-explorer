@@ -15,8 +15,8 @@
   height: 40px;
   width: 227px;
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 24px;
+  right: 24px;
   border-radius: 8px;
   gap: 5px;
   display: flex;
@@ -45,6 +45,21 @@
   line-height: 100%;
   text-align: center;
   align-content: center;
+}
+
+.article__keyword {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  padding: 8px 20px;
+  margin: 0;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  border-radius: 10px;
+  text-transform: capitalize;
 }
 
 .article__img {
@@ -113,6 +128,11 @@
     right: 8px;
   }
 
+  .article__keyword {
+    top: 8px;
+    left: 8px;
+  }
+
   .article__text-container {
     padding: 16px;
   }
@@ -143,6 +163,11 @@
   .article__bookmark-container {
     top: 16px;
     right: 16px;
+  }
+
+  .article__keyword {
+    top: 16px;
+    left: 16px;
   }
 
   .article__title {
