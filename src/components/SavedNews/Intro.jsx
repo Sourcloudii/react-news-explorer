@@ -6,7 +6,6 @@ export default function Intro({ articles }) {
   const { user } = useContext(CurrentUserContext);
 
   return (
-    <div className="intro">
       <div className="intro__content">
         <p className="intro__title">Saved articles</p>
         {articles.length === 1 ? (
@@ -26,6 +25,5 @@ export default function Intro({ articles }) {
           </span>
         </p>
       </div>
-    </div>
   );
 }

@@ -16,7 +16,7 @@ export default function ModalWithForm({
     <div className={`modal ${activeModal ? "modal-visible" : ""}`}>
       <div className="modal__content">
         <button className="modal__close-btn" onClick={onClose}>
-          <img src={closeBtn} alt="Close button" />
+          <img src={closeBtn} alt="Close button" className="modal__close-img" />
         </button>
         <h2 className="modal__title">{title}</h2>
         <form className="modal__children" onSubmit={handleSubmit}>

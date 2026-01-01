@@ -20,12 +20,14 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [activeModal, setActiveModal] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [menuState, setMenuState] = useState(false);
+  const [modalState, setModalState] = useState(false);
   const [savedArticles, setSavedArticles] = useState([]);
+  const [articles, setArticles] = useState([]);
+  const [user, setUser] = useState({});
 
   const navigate = useNavigate();
 
@@ -68,7 +70,6 @@ function App() {
       .then((res) => {
         const articleKeyword = res.articles.map((article) => ({ ...article, keyword: query }));
         setArticles(articleKeyword);
-        console.log(articleKeyword);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -85,7 +86,6 @@ function App() {
       .then((data) => {
         if (data.token) {
           setToken(data.token);
-          console.log(data);
           return auth.checkToken(data.token);
         }
       })
@@ -98,7 +98,6 @@ function App() {
   };
 
   const handleRegisterModalSubmit = ({ email, password, username }) => {
-    console.log("Registering user:", { email, password, username });
     handleLoginModalSubmit({ email, password });
   };
 
@@ -118,15 +117,38 @@ function App() {
     navigate("/");
   };
 
-  const handleRegisterModal = () => setActiveModal("register");
-  const handleLoginModal = () => setActiveModal("login");
-  const handleCloseModal = () => setActiveModal("");
+  const toggleMenu = () => {
+    setMenuState(!menuState);
+    setActiveModal("");
+  };
+
+  const handleRegisterModal = () => {
+    setActiveModal("register");
+    setModalState(true);
+    setMenuState(false);
+  };
+  const handleLoginModal = () => {
+    setActiveModal("login");
+    setModalState(true);
+    setMenuState(false);
+  };
+  const handleCloseModal = () => {
+    setActiveModal("");
+    setModalState(false);
+  };
 
   return (
     <CurrentUserContext.Provider value={{ isLoggedIn, user }}>
       <div className="page">
         <div className="page__content">
-          <Header handleLoginModal={handleLoginModal} handleLogout={handleLogout} />
+          <Header
+            handleLoginModal={handleLoginModal}
+            handleLogout={handleLogout}
+            setMenuState={setMenuState}
+            menuState={menuState}
+            modalState={modalState}
+            toggleMenu={toggleMenu}
+          />
           <Routes>
             <Route
               path="/"

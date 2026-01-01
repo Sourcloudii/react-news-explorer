@@ -9,18 +9,20 @@ function Footer() {
       <div className="footer__content">
         <p className="footer__text">© 2025 Supersite, Powered by News API</p>
         <div className="footer__nav">
-          <Link to="/" className="footer__link">
-            Home
-          </Link>
-          <a
-            href="https://tripleten.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer__link"
-          >
-            TripleTen
-          </a>
-          <div className="footer__nav__imgs">
+          <div className="footer__nav-words">
+            <Link to="/" className="footer__link">
+              Home
+            </Link>
+            <a
+              href="https://tripleten.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__link"
+            >
+              TripleTen
+            </a>
+          </div>
+          <div className="footer__nav-imgs">
             <a href="https://github.com/Sourcloudii" className="footer__img-wrapper">
               <img src={githubIcon} alt="Github" className="footer__img" />
             </a>

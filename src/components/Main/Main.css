@@ -24,6 +24,7 @@
   font-family: Roboto Slab;
   font-weight: 400;
   font-size: 40px;
+  line-height: 46px;
   margin: 0;
 }
 
@@ -35,8 +36,8 @@
 
 .results__list {
   list-style-type: none;
-  padding: 0;
-  margin: 64px 0;
+  padding: 64px 0;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -59,4 +60,59 @@
 .results__show-more-btn:hover {
   cursor: pointer;
   background-color: #e8e8e8;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+
+  .section__content {
+    padding: 0 40px;
+  }
+
+  .results__text {
+    width: 336px;
+    height: 34px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .results__list {
+    gap: 8px;
+    padding: 32px 0;
+  }
+
+  .results__content {
+    padding: 40px;
+  }
+
+  .results__show-more-btn {
+    width: 240px;
+    height: 56px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .hero {
+    height: 536px;
+  }
+
+  .section__content {
+    padding: 0 16px;
+  }
+
+  .results__content {
+    padding: 32px 16px 24px;
+  }
+
+  .results__text {
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .results__list {
+    padding-top: 58px;
+    gap: 10px;
+  }
 }

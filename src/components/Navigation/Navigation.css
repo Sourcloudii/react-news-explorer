@@ -34,6 +34,8 @@
   border-radius: 100px;
   color: #fff;
   font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
   padding: 12px;
   cursor: pointer;
 }
@@ -62,4 +64,60 @@
 
 .dark-text {
   color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    height: 66px;
+    gap: 16px;
+  }
+
+  .navigation__link {
+    font-size: 16px;
+    padding: 18px 8px 20px;
+  }
+
+  .navigation__header-btn {
+    width: 152px;
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navigation {
+    flex-direction: column;
+    visibility: hidden;
+    margin-top: 17px;
+    width: 100%;
+    align-items: flex-start;
+    height: auto;
+    gap: 22px;
+  }
+
+  .navigation__menu-active {
+    visibility: visible;
+  }
+
+  .navigation__link {
+    border: none;
+    padding: 16px 0 16px;
+    color: #fff;
+  }
+
+  .dark-text {
+    color: #fff;
+  }
+
+  .navigation__header-btn {
+    height: 56px;
+    width: 100%;
+  }
+
+  .navigation-btn__container {
+    width: -webkit-fill-available;
+    justify-content: center;
+    border-color: #fff;
+  }
 }
