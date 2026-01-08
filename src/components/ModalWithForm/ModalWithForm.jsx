@@ -13,7 +13,7 @@ export default function ModalWithForm({
   secondErrorMsg,
 }) {
   return (
-    <div className={`modal ${activeModal ? "modal-visible" : ""}`}>
+    <div className={`modal ${activeModal ? "modal_visible" : ""}`}>
       <div className="modal__content">
         <button className="modal__close-btn" onClick={onClose}>
           <img src={closeBtn} alt="Close button" className="modal__close-img" />
