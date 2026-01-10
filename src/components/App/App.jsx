@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 
 import { apiKey } from "../../utils/constants.js";
 import { getNewsData } from "../../utils/newsApi.js";
@@ -29,6 +29,7 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [user, setUser] = useState({});
 
+  const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -148,6 +149,7 @@ function App() {
             menuState={menuState}
             modalState={modalState}
             toggleMenu={toggleMenu}
+            location={location.pathname}
           />
           <Routes>
             <Route
