@@ -25,7 +25,7 @@ export default function Navigation({ path, handleLoginModal, handleLogout, menuS
           <div className="navigation-btn__container" onClick={handleLogout}>
             <button className="navigation__header-btn-user">{user.name}</button>
             <img
-              src={path === "/" ? logoutLight : logoutdark}
+              src={logoutLight}
               alt="Logout Icon"
               className="navigation__header-btn-img"
             />
@@ -55,7 +55,7 @@ export default function Navigation({ path, handleLoginModal, handleLogout, menuS
           >
             <button className="navigation__header-btn-user dark-text">{user.name}</button>
             <img
-              src={path === "/" ? logoutLight : `${menuState ? logoutLight : logoutdark}`}
+              src={`${menuState ? logoutLight : logoutdark}`}
               alt="Logout Icon"
               className="navigation__header-btn-img"
             />
