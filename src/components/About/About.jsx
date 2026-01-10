@@ -3,7 +3,7 @@ import me from "../../images/Me-Profress.jpg";
 
 function About() {
   return (
-    <div className="about__container">
+    <section className="about__container">
       <img src={me} alt="Picture of creator" className="about__img" />
       <div className="about__text__container">
         <h2 className="about__title">About the author</h2>
@@ -14,7 +14,7 @@ function About() {
           explorer app.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 
