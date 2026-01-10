@@ -8,13 +8,12 @@ import menuIcon_dark from "../../images/menu-Icon-dark.svg";
 import closeBtn from "../../images/close-btn.svg";
 import Navigation from "../Navigation/Navigation";
 
-function Header({ handleLoginModal, handleLogout, setMenuState, menuState, modalState, toggleMenu }) {
-  const location = useLocation();
+function Header({ handleLoginModal, handleLogout, setMenuState, menuState, modalState, toggleMenu, location }) {
 
-  if (location.pathname == "/") {
+  if (location == "/") {
     return (
       <header className="header">
-        <div className={`header__content ${menuState ? "header__menu-active" : ""}`}>
+        <div className={`header__content ${menuState ? "header__content_menu-active" : ""}`}>
           <Link to="/" className="header__logo-link">
             <img src={logoLight} alt="News Explorer Logo" className="header__logo" />
           </Link>
@@ -34,7 +33,7 @@ function Header({ handleLoginModal, handleLogout, setMenuState, menuState, modal
             />
           )}
           <Navigation
-            path={location.pathname}
+            path={location}
             handleLoginModal={handleLoginModal}
             handleLogout={handleLogout}
             menuState={menuState}
@@ -43,10 +42,10 @@ function Header({ handleLoginModal, handleLogout, setMenuState, menuState, modal
         </div>
       </header>
     );
-  } else if (location.pathname == "/saved-news") {
+  } else if (location == "/saved-news") {
     return (
       <header className="header header_dark-theme">
-        <div className={`header__content ${menuState ? "header__menu-active" : ""}`}>
+        <div className={`header__content ${menuState ? "header__content_menu-active" : ""}`}>
           <Link to="/" className="header__logo-link">
             <img src={`${menuState ? logoLight : logoDark}`} alt="News Explorer Logo" className="header__logo" />
           </Link>
@@ -66,7 +65,7 @@ function Header({ handleLoginModal, handleLogout, setMenuState, menuState, modal
             />
           )}
           <Navigation
-            path={location.pathname}
+            path={location}
             handleLoginModal={handleLoginModal}
             handleLogout={handleLogout}
             menuState={menuState}
