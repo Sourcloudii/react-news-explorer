@@ -5,6 +5,8 @@ import { CurrentUserContext } from "../../context/currentUserContent";
 import bookmarkIcon from "../../images/bookmark.svg";
 import bookmarkIcon_hover from "../../images/bookmark-hover.svg";
 import bookmarkIcon_saved from "../../images/bookmark-saved.svg";
+import trashIcon from "../../images/trash.svg"
+import trashIcon_hover from "../../images/trash-hover.svg"
 
 export default function NewsCard({ article, handleSaveArticle }) {
   const { isLoggedIn } = useContext(CurrentUserContext);
