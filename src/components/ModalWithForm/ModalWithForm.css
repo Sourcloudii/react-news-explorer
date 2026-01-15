@@ -95,7 +95,7 @@
   height: 14px;
 }
 
-.modal__second-error-msg {
+.modal__error-msg_second {
   position: absolute;
   top: -25px;
 }

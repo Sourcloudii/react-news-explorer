@@ -20,13 +20,13 @@ function SearchForm({ handleSearchSubmit }) {
           <input
             minLength="2"
             type="text"
-            className="searchForm__field-input"
+            className="searchForm__input"
             placeholder="Enter topic"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             required
           />
-          <button type="submit" className="searchForm__field-btn">
+          <button type="submit" className="searchForm__btn">
             Search
           </button>
         </form>

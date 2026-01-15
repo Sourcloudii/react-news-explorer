@@ -37,7 +37,7 @@
   position: relative;
 }
 
-.searchForm__field-input {
+.searchForm__input {
   border-radius: 100px;
   width: 100%;
   padding: 0 0 0 24px;
@@ -46,7 +46,7 @@
   line-height: 22px;
 }
 
-.searchForm__field-btn {
+.searchForm__btn {
   color: #fff;
   background-color: #2f71e5;
   position: absolute;
@@ -61,12 +61,12 @@
   line-height: 24px;
 }
 
-.searchForm__field-btn:hover {
+.searchForm__btn:hover {
   cursor: pointer;
   background-color: #347eff;
 }
 
-.searchForm__field-btn:active {
+.searchForm__btn:active {
   background-color: #2a65cc;
 }
 
@@ -94,7 +94,7 @@
     height: 56px;
   }
 
-  .searchForm__field-btn {
+  .searchForm__btn {
     width: 160px;
     height: 56px;
   }
@@ -125,12 +125,12 @@
     gap: 16px;
   }
 
-  .searchForm__field-input {
+  .searchForm__input {
     width: inherit;
     height: 56px;
   }
 
-  .searchForm__field-btn {
+  .searchForm__btn {
     width: inherit;
     position: relative;
   }

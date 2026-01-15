@@ -12,8 +12,8 @@ export default function Navigation({ path, handleLoginModal, handleLogout, menuS
 
   if (path === "/") {
     return (
-      <div className={`navigation ${menuState ? "navigation__menu-active" : ""}`}>
-        <Link to="/" className="navigation__link navigation__link-active-light">
+      <div className={`navigation ${menuState ? "navigation_menu-active" : ""}`}>
+        <Link to="/" className="navigation__link navigation__link_active_light">
           Home
         </Link>
         {isLoggedIn && (
@@ -39,12 +39,12 @@ export default function Navigation({ path, handleLoginModal, handleLogout, menuS
     );
   } else if (path === "/saved-news") {
     return (
-      <div className={`navigation ${menuState ? "navigation__menu-active" : ""}`}>
+      <div className={`navigation ${menuState ? "navigation_menu-active" : ""}`}>
         <Link to="/" className="navigation__link dark-text" onClick={menuStateOff}>
           Home
         </Link>
         {isLoggedIn && (
-          <Link to="/saved-news" className="navigation__link navigation__link-active-dark">
+          <Link to="/saved-news" className="navigation__link navigation__link_active_dark">
             Saved articles
           </Link>
         )}

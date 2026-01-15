@@ -17,7 +17,7 @@ export default function Intro({ articles }) {
         )}
         <p className="intro__keywords">
           By keywords:{" "}
-          <span className="intro__span__keywords">
+          <span className="intro__keywords-span">
             {articles
               .map((article) => article.keyword)
               .slice(0, 2)

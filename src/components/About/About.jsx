@@ -5,7 +5,7 @@ function About() {
   return (
     <section className="about__container">
       <img src={me} alt="Picture of creator" className="about__img" />
-      <div className="about__text__container">
+      <div className="about__text-container">
         <h2 className="about__title">About the author</h2>
         <p className="about__subtitle">
           Hi! I'm Ken, a full-stack developer who studied at TripleTens coding bootcamp. I am

@@ -39,7 +39,7 @@ export default function RegisterModal({ onClose, onOrClick, activeModal, handleR
       handleSubmit={handleRegisterModalSubmit}
       secondErrorMsg={
         emailError && (
-          <span className="modal__error-msg modal__second-error-msg">
+          <span className="modal__error-msg modal__error-msg_second">
             This email is not available
           </span>
         )
