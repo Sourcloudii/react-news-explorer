@@ -1,6 +1,5 @@
 import "./Header.css";
-import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import logoLight from "../../images/logo-light.svg";
 import logoDark from "../../images/logo-dark.svg";
 import menuIcon_light from "../../images/menu-icon-light.svg";
