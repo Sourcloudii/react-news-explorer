@@ -9,11 +9,11 @@ export default function Intro({ articles }) {
       <div className="intro__content">
         <p className="intro__title">Saved articles</p>
         {articles.length === 1 ? (
-          <h1 className="intro__subtitle">{user.name}, you have 1 saved article</h1>
+          <h3 className="intro__subtitle">{user.name}, you have 1 saved article</h3>
         ) : (
-          <h1 className="intro__subtitle">
+          <h3 className="intro__subtitle">
             {user.name}, you have {articles.length} saved articles
-          </h1>
+          </h3>
         )}
         <p className="intro__keywords">
           By keywords:{" "}
