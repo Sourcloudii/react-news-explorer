@@ -57,7 +57,7 @@ export default function NewsCard({ article, handleSaveArticle }) {
         <img src={article.urlToImage} alt={article.title} className="article__img" />
         <div className="article__text-container">
           <p className="article__date">{formattedDate}</p>
-          <h1 className="article__title">{article.title}</h1>
+          <h2 className="article__title">{article.title}</h2>
           <p className="article__content">{articleContent}</p>
           <h2 className="article__source">{article.source.name}</h2>
         </div>
