@@ -5,10 +5,18 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
+    ignores: ["dist/**", "node_modules/**"],
+  },
+  {
     files: ["**/*.{js,mjs,cjs,jsx}"],
     plugins: { js },
     extends: ["js/recommended"],
     languageOptions: { globals: globals.browser },
   },
   pluginReact.configs.flat.recommended,
+  {
+    rules: {
+      "react/react-in-jsx-scope": "off",
+    },
+  },
 ]);
