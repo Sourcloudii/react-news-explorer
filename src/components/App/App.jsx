@@ -98,7 +98,7 @@ function App() {
       .catch(console.error);
   };
 
-  const handleRegisterModalSubmit = ({ email, password, username }) => {
+  const handleRegisterModalSubmit = ({ email, password }) => {
     handleLoginModalSubmit({ email, password });
   };
 
