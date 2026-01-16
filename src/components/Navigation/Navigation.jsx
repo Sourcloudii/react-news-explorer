@@ -12,7 +12,7 @@ export default function Navigation({ path, handleLoginModal, handleLogout, menuS
 
   if (path === "/") {
     return (
-      <div className={`navigation ${menuState ? "navigation_menu-active" : ""}`}>
+      <nav className={`navigation ${menuState ? "navigation_menu-active" : ""}`}>
         <Link to="/" className="navigation__link navigation__link_active_light">
           Home
         </Link>
@@ -35,11 +35,11 @@ export default function Navigation({ path, handleLoginModal, handleLogout, menuS
             Sign in
           </button>
         )}
-      </div>
+      </nav>
     );
   } else if (path === "/saved-news") {
     return (
-      <div className={`navigation ${menuState ? "navigation_menu-active" : ""}`}>
+      <nav className={`navigation ${menuState ? "navigation_menu-active" : ""}`}>
         <Link to="/" className="navigation__link dark-text" onClick={menuStateOff}>
           Home
         </Link>
@@ -65,7 +65,7 @@ export default function Navigation({ path, handleLoginModal, handleLogout, menuS
             Sign in
           </button>
         )}
-      </div>
+      </nav>
     );
   }
 }
