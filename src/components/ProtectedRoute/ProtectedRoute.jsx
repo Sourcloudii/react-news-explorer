@@ -5,7 +5,6 @@ import { useContext } from "react";
 export default function ProtectedRoute({ children }) {
   const { isLoggedIn } = useContext(CurrentUserContext);
   const location = useLocation();
-  const from = location.state?.from || "/";
 
   if (!isLoggedIn) return <Navigate to="/" state={{ from: location.pathname }} replace />;
 
