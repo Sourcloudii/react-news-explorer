@@ -1,17 +1,13 @@
-const BASE_URL = "http://localhost:3000";
-
 export function checkResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
 export function getItems() {
-  return new Promise((resolve, reject) =>
+  return new Promise((resolve) =>
     resolve([
       {
         _id: "65f7368dfb74bd6a92114c85",
         owner: "fakeid",
-        title: "Some news article",
-        url: "put some actual article URL here",
         author: "Verge Staff",
         content:
           "Every week at The Verge, were tracking whats happening with Trump Mobiles promised and yet undelivered Android phone. Why? Because we cover phones. We also cover vaporware, which the T1 Phone 8002 (g… [+3568 chars]",
@@ -30,7 +26,7 @@ export function getItems() {
 }
 
 export function saveArticle(article, userId) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     resolve({
       _id: "65f7371e7bce9e7d331b11a0",
       owner: userId,
