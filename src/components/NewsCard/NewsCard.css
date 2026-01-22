@@ -32,7 +32,30 @@
   background: #fff;
 }
 
+.article__trash-btn {
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #fff;
+}
+
 .article__login-alert {
+  width: 142px;
+  height: 18px;
+  padding: 11px 20px;
+  margin: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 10px 22px 0px #3b4a741a;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  text-align: center;
+  align-content: center;
+}
+
+.article__trash-alert {
   width: 142px;
   height: 18px;
   padding: 11px 20px;

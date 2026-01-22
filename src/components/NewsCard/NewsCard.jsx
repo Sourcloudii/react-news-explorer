@@ -5,14 +5,13 @@ import { CurrentUserContext } from "../../context/currentUserContent";
 import bookmarkIcon from "../../images/bookmark.svg";
 import bookmarkIcon_hover from "../../images/bookmark-hover.svg";
 import bookmarkIcon_saved from "../../images/bookmark-saved.svg";
-import trashIcon from "../../images/trash.svg"
-import trashIcon_hover from "../../images/trash-hover.svg"
+import trashIcon from "../../images/trash.svg";
+import trashIcon_hover from "../../images/trash-hover.svg";
 
-export default function NewsCard({ article, handleSaveArticle }) {
+export default function NewsCard({ article, handleSaveArticle, handleDeleteArticle, location }) {
   const { isLoggedIn } = useContext(CurrentUserContext);
   const [saved, setSaved] = useState(false);
-  const [loginAlert, setLoginAlert] = useState(false);
-  const [hovered, setHovered] = useState(false);
+  const [hover, setHover] = useState(false);
 
   const articleContent = (article.content || "").split("[")[0].replace(/<[^>]*>/g, "");
   const publishedDate = new Date(article.publishedAt);
@@ -30,28 +29,55 @@ export default function NewsCard({ article, handleSaveArticle }) {
       setSaved(!saved);
       handleSaveArticle(article);
     }
+    console.log(location);
   };
 
-  const handleHover = (e) => {
+  const handleImgHover = () => {
     if (saved) return bookmarkIcon_saved;
 
-    if (hovered && !saved) return bookmarkIcon_hover;
+    if (hover && !saved) return bookmarkIcon_hover;
     return bookmarkIcon;
+  };
+
+  const handleTrashHover = () => {
+    if (hover) return trashIcon_hover;
+    return trashIcon;
+  };
+
+  const handleTrashClick = (e) => {
+    e.stopPropagation();
+    setSaved(false);
+    handleDeleteArticle(article._id);
   };
 
   return (
     <li className="article__item">
       <div className="article__item-container" onClick={() => handleOpenArticle(article.url)}>
-        <div
-          className="article__bookmark-container"
-          onClick={handleBookmarkClick}
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-        >
-          {hovered && !isLoggedIn && (
+        <div className="article__bookmark-container" onClick={handleBookmarkClick}>
+          {hover && !isLoggedIn && location === "/" && (
             <p className="article__login-alert">Log in to save articles</p>
           )}
-          <img src={handleHover()} alt="bookmark" className="article__bookmark-btn" />
+          {hover && isLoggedIn && location === "/saved-news" && (
+            <p className="article__trash-alert">Remove from saved</p>
+          )}
+          {location === "/saved-news" ? (
+            <img
+              src={handleTrashHover()}
+              alt="trash"
+              className="article__trash-btn"
+              onClick={handleTrashClick}
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
+            />
+          ) : (
+            <img
+              src={handleImgHover()}
+              alt="bookmark"
+              className="article__bookmark-btn"
+              onMouseEnter={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
+            />
+          )}
         </div>
         <p className="article__keyword">{article.keyword}</p>
         <img src={article.urlToImage} alt={article.title} className="article__img" />

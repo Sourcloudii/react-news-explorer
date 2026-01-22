@@ -39,3 +39,12 @@ export function saveArticle(article, userId) {
     });
   }).catch(checkResponse);
 }
+
+export function deleteArticle(articleId, userId) {
+  return new Promise((resolve) => {
+    resolve({
+      _id: articleId,
+      owner: userId,
+    });
+  }).catch(checkResponse);
+}

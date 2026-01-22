@@ -4,7 +4,7 @@ import Intro from "../SavedNews/Intro.jsx";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../context/currentUserContent.js";
 
-export default function SavedNews({ savedArticles }) {
+export default function SavedNews({ savedArticles, handleDeleteArticle, location }) {
   const { user } = useContext(CurrentUserContext);
 
   return (
@@ -20,7 +20,12 @@ export default function SavedNews({ savedArticles }) {
             {savedArticles
               .filter((article) => article.owner === user._id)
               .map((item) => (
-                <NewsCard key={item.url} article={item} />
+                <NewsCard
+                  key={item.url}
+                  article={item}
+                  handleDeleteArticle={handleDeleteArticle}
+                  location={location}
+                />
               ))}
           </ul>
         </div>

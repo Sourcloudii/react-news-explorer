@@ -9,7 +9,6 @@ import { CurrentUserContext } from "../../context/currentUserContent.js";
 import * as auth from "../../utils/auth.js";
 import * as api from "../../utils/api.js";
 
-// Components
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 import Footer from "../Footer/Footer.jsx";
@@ -19,7 +18,6 @@ import LoginModal from "../LoginModal/LoginModal.jsx";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState("");
   const [activeModal, setActiveModal] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -65,7 +63,6 @@ function App() {
   }, [isLoggedIn]);
 
   const handleSearchSubmit = (query) => {
-    setSearchQuery(query);
     setIsLoading(true);
     getNewsData(query, apiKey)
       .then((res) => {
@@ -98,15 +95,22 @@ function App() {
       .catch(console.error);
   };
 
-  const handleRegisterModalSubmit = ({ email, password }) => {
-    handleLoginModalSubmit({ email, password });
-  };
+  const handleRegisterModalSubmit = ({ email, password }) => handleLoginModalSubmit({ email, password });
 
   const handleSaveArticle = (article) => {
     api
       .saveArticle(article, user._id)
       .then((savedArticle) => {
         setSavedArticles((prevArticles) => [...prevArticles, savedArticle]);
+      })
+      .catch(console.error);
+  };
+
+  const handleDeleteArticle = (articleId) => {
+    api
+      .deleteArticle(articleId, user._id)
+      .then(() => {
+        setSavedArticles((prevArticles) => prevArticles.filter((article) => article._id !== articleId));
       })
       .catch(console.error);
   };
@@ -120,7 +124,7 @@ function App() {
 
   const toggleMenu = () => {
     setMenuState(!menuState);
-    setActiveModal("");
+    handleCloseModal();
   };
 
   const handleRegisterModal = () => {
@@ -160,6 +164,8 @@ function App() {
                   articles={articles}
                   isLoading={isLoading}
                   handleSaveArticle={handleSaveArticle}
+                  handleDeleteArticle={handleDeleteArticle}
+                  location={location.pathname}
                 />
               }
             />
@@ -167,7 +173,11 @@ function App() {
               path="/saved-news"
               element={
                 <ProtectedRoute>
-                  <SavedNews savedArticles={savedArticles} />
+                  <SavedNews
+                    savedArticles={savedArticles}
+                    handleDeleteArticle={handleDeleteArticle}
+                    location={location.pathname}
+                  />
                 </ProtectedRoute>
               }
             />

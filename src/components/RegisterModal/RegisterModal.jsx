@@ -15,7 +15,6 @@ export default function RegisterModal({ onClose, onOrClick, activeModal, handleR
 
   const handleRegisterModalSubmit = (e) => {
     e.preventDefault();
-    // Change validation logic as needed
     if (!validateEmail(email)) {
       setEmailError(true);
       return;

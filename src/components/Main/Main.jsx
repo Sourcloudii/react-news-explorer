@@ -6,7 +6,14 @@ import Preloader from "../Preloader/Preloader";
 import NewsCard from "../NewsCard/NewsCard";
 import NoResults from "../NoResults/NoResults";
 
-function Main({ handleSearchSubmit, articles, isLoading, handleSaveArticle }) {
+function Main({
+  handleSearchSubmit,
+  articles,
+  isLoading,
+  handleSaveArticle,
+  handleDeleteArticle,
+  location,
+}) {
   const [visibleArticles, setVisibleArticles] = useState(3);
   const [hasSearched, setHasSearched] = useState(false);
 
@@ -49,6 +56,8 @@ function Main({ handleSearchSubmit, articles, isLoading, handleSaveArticle }) {
                       key={item.url}
                       article={item}
                       handleSaveArticle={handleSaveArticle}
+                      handleDeleteArticle={handleDeleteArticle}
+                      location={location}
                     />
                   ))}
                 </ul>
