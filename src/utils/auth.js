@@ -14,3 +14,9 @@ export const checkToken = () => {
     });
   }).catch(checkResponse);
 };
+// add password later
+export const register = (email, username) => {
+  return new Promise((resolve) => {
+    resolve({ data: { email, username, _id: "fakeid" } });
+  }).catch(checkResponse);
+};

@@ -95,7 +95,27 @@ function App() {
       .catch(console.error);
   };
 
-  const handleRegisterModalSubmit = ({ email, password }) => handleLoginModalSubmit({ email, password });
+  const handleRegisterModalSubmit = ({ email, username, password }) => {
+    if (!email || !username || !password) return;
+
+    auth
+      .register(email, username, password)
+      .then(() => {
+        return auth.authorize({ email, password });
+      })
+      .then((data) => {
+        if (data.token) {
+          setToken(data.token);
+          return auth.checkToken(data.token);
+        }
+      })
+      .then((res) => {
+        setIsLoggedIn(true);
+        setUser(res.data);
+        handleCloseModal();
+      })
+      .catch(console.error);
+  };
 
   const handleSaveArticle = (article) => {
     api

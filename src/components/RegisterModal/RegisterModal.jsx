@@ -20,7 +20,7 @@ export default function RegisterModal({ onClose, onOrClick, activeModal, handleR
       return;
     }
     setEmailError(false);
-    handleRegister({ email, password, username });
+    handleRegister({ email, username, password });
     onClose();
     setEmail("");
     setPassword("");
