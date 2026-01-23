@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
 export default function LoginModal({ onClose, onOrClick, activeModal, handleLogin }) {
