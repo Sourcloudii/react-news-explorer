@@ -71,11 +71,9 @@ function Main({
           )}
         </>
       )}
-      <section className="about">
-        <div className="section__content">
-          <About />
-        </div>
-      </section>
+      <div className="section__content">
+        <About />
+      </div>
     </main>
   );
 }
