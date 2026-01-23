@@ -33,7 +33,7 @@ function App() {
   useEffect(() => {
     if (!activeModal) return;
 
-    const handleEscClose = (e) => e.key === "Escape" && setActiveModal("");
+    const handleEscClose = (e) => e.key === "Escape" && handleCloseModal();
 
     document.addEventListener("keydown", handleEscClose);
 
@@ -68,10 +68,11 @@ function App() {
       .then((res) => {
         const articleKeyword = res.articles.map((article) => ({ ...article, keyword: query }));
         setArticles(articleKeyword);
-        setIsLoading(false);
       })
       .catch((error) => {
         console.error(error);
+      })
+      .finally(() => {
         setIsLoading(false);
       });
   };
