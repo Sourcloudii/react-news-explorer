@@ -99,7 +99,7 @@ function App() {
     if (!email || !username || !password) return;
 
     auth
-      .register(email, username, password)
+      .register({ email, username, password })
       .then(() => {
         return auth.authorize({ email, password });
       })

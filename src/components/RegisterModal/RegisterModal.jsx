@@ -1,5 +1,5 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function RegisterModal({ onClose, onOrClick, activeModal, handleRegister }) {
   const [email, setEmail] = useState("");
@@ -13,6 +13,15 @@ export default function RegisterModal({ onClose, onOrClick, activeModal, handleR
     return emailRegex.test(email);
   };
 
+  useEffect(() => {
+    if (activeModal) {
+      setEmail("");
+      setPassword("");
+      setUsername("");
+      setEmailError(false);
+    }
+  }, [activeModal]);
+
   const handleRegisterModalSubmit = (e) => {
     e.preventDefault();
     if (!validateEmail(email)) {
@@ -21,10 +30,6 @@ export default function RegisterModal({ onClose, onOrClick, activeModal, handleR
     }
     setEmailError(false);
     handleRegister({ email, username, password });
-    onClose();
-    setEmail("");
-    setPassword("");
-    setUsername("");
   };
 
   return (
@@ -38,9 +43,7 @@ export default function RegisterModal({ onClose, onOrClick, activeModal, handleR
       handleSubmit={handleRegisterModalSubmit}
       secondErrorMsg={
         emailError && (
-          <span className="modal__error-msg modal__error-msg_second">
-            This email is not available
-          </span>
+          <span className="modal__error-msg modal__error-msg_second">This email is not available</span>
         )
       }
     >

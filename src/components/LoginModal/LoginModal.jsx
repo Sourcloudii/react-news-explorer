@@ -1,12 +1,7 @@
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 
-export default function LoginModal({
-  onClose,
-  onOrClick,
-  activeModal,
-  handleLogin,
-}) {
+export default function LoginModal({ onClose, onOrClick, activeModal, handleLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState(false);
@@ -16,6 +11,14 @@ export default function LoginModal({
     return emailRegex.test(email);
   };
 
+  useEffect(() => {
+    if (activeModal) {
+      setEmail("");
+      setPassword("");
+      setEmailError(false);
+    }
+  }, [activeModal]);
+
   const onLoginModalSubmit = (e) => {
     e.preventDefault();
     if (!validateEmail(email)) {
@@ -24,16 +27,6 @@ export default function LoginModal({
     }
     setEmailError(false);
     handleLogin({ email, password });
-    onClose();
-    setEmail("");
-    setPassword("");
-  };
-
-  const handleLoginModalClose = () => {
-    setEmailError(false);
-    onClose();
-    setEmail("");
-    setPassword("");
   };
 
   return (
@@ -41,7 +34,7 @@ export default function LoginModal({
       title="Sign in"
       buttonText="Sign in"
       orText="Sign up"
-      onClose={handleLoginModalClose}
+      onClose={onClose}
       onOrClick={onOrClick}
       activeModal={activeModal}
       handleSubmit={onLoginModalSubmit}
