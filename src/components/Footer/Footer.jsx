@@ -8,7 +8,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer__content">
         <p className="footer__text">© 2025 Supersite, Powered by News API</p>
-        <div className="footer__nav">
+        <nav className="footer__nav">
           <div className="footer__nav-words">
             <Link to="/" className="footer__link">
               Home
@@ -30,7 +30,7 @@ function Footer() {
               <img src={linkedInIcon} alt="LinkedIn" className="footer__img" />
             </a>
           </div>
-        </div>
+        </nav>
       </div>
     </footer>
   );
