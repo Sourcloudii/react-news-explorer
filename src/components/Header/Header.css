@@ -34,6 +34,7 @@
 
 .header__navigation-icon {
   visibility: hidden;
+  position: absolute;
 }
 
 @media screen and (max-width: 768px) {
@@ -52,6 +53,17 @@
 
   .header__logo-link {
     height: 24.8px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__content {
+    padding: 0 20px;
+  }
+
+  .header__logo {
+    height: 24px;
+    width: 120px;
   }
 }
 
@@ -99,6 +111,7 @@
   }
 
   .header__navigation-icon {
+    position: relative;
     visibility: visible;
     width: 24px;
     height: 24px;

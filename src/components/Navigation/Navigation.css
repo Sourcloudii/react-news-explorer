@@ -86,6 +86,25 @@
   }
 }
 
+@media screen and (max-width: 445px) {
+  .navigation {
+    gap: 12px;
+  }
+
+  .navigation__header-btn {
+    width: 100px;
+    height: 36px;
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .navigation__link {
+    font-size: 14px;
+    max-width: 90px;
+    padding: 16px 6px 18px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .navigation {
     flex-direction: column;
