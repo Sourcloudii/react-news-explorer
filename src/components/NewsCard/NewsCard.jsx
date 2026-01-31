@@ -51,9 +51,9 @@ export default function NewsCard({ article, handleSaveArticle, handleDeleteArtic
   };
 
   return (
-    <li className="article__item">
-      <div className="article__item-container" onClick={() => handleOpenArticle(article.url)}>
-        <div className="article__bookmark-container" onClick={handleBookmarkClick}>
+    <li className="article-card">
+      <div className="article-card__container" onClick={() => handleOpenArticle(article.url)}>
+        <div className="article-card-bookmark-container" onClick={handleBookmarkClick}>
           {hover && !isLoggedIn && location === "/" && (
             <p className="article__login-alert">Log in to save articles</p>
           )}
@@ -64,7 +64,7 @@ export default function NewsCard({ article, handleSaveArticle, handleDeleteArtic
             <img
               src={handleTrashHover()}
               alt="trash"
-              className="article__trash-btn"
+              className="article__trash-img"
               onClick={handleTrashClick}
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
@@ -73,7 +73,7 @@ export default function NewsCard({ article, handleSaveArticle, handleDeleteArtic
             <img
               src={handleImgHover()}
               alt="bookmark"
-              className="article__bookmark-btn"
+              className="article__bookmark-img"
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
             />

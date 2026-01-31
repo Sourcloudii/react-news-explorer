@@ -1,4 +1,4 @@
-.article__item {
+.article-card {
   width: 400px;
   height: 576px;
   border-radius: 16px;
@@ -6,12 +6,16 @@
   overflow: hidden;
 }
 
-.article__item-container {
+.article-card:hover {
+  box-shadow: 0px 25px 56px -56px #081d2d;
+}
+
+.article-card__container {
   cursor: pointer;
   position: relative;
 }
 
-.article__bookmark-container {
+.article-card-bookmark-container {
   height: 40px;
   width: 227px;
   position: absolute;
@@ -24,7 +28,7 @@
   cursor: pointer;
 }
 
-.article__bookmark-btn {
+.article__bookmark-img {
   width: 24px;
   height: 24px;
   padding: 8px;
@@ -32,7 +36,7 @@
   background: #fff;
 }
 
-.article__trash-btn {
+.article__trash-img {
   width: 24px;
   height: 24px;
   padding: 8px;
@@ -136,7 +140,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .article__item {
+  .article-card {
     width: 224px;
     height: 420px;
   }
@@ -146,7 +150,7 @@
     height: 150px;
   }
 
-  .article__bookmark-container {
+  .article-card-bookmark-container {
     top: 8px;
     right: 8px;
   }
@@ -173,7 +177,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .article__item {
+  .article-card {
     width: 288px;
     height: 440px;
   }
@@ -183,7 +187,7 @@
     height: 196px;
   }
 
-  .article__bookmark-container {
+  .article-card-bookmark-container {
     top: 16px;
     right: 16px;
   }
