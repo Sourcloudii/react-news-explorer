@@ -1,0 +1,143 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  gap: 34px;
+}
+
+.navigation__link {
+  max-width: 114px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px 22px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.navigation__link_active_light {
+  border-bottom: 3px solid #fff;
+}
+
+.navigation__link_active_dark {
+  border-bottom: 3px solid #000;
+  color: #000;
+}
+
+.navigation__header-btn {
+  width: 176px;
+  height: 48px;
+  background: none;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.navigation-btn__container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #fff;
+  padding: 12px 19px;
+  border-radius: 100px;
+}
+
+.navigation-btn__container-dark {
+  border: 1px solid #000;
+}
+
+.navigation__header-btn-user {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 0 15px 0 0;
+  cursor: pointer;
+}
+
+.dark-text {
+  color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    height: 66px;
+    gap: 16px;
+  }
+
+  .navigation__link {
+    font-size: 16px;
+    padding: 18px 8px 20px;
+  }
+
+  .navigation__header-btn {
+    width: 152px;
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .navigation {
+    gap: 12px;
+  }
+
+  .navigation__header-btn {
+    width: 100px;
+    height: 36px;
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .navigation__link {
+    font-size: 14px;
+    max-width: 90px;
+    padding: 16px 6px 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navigation {
+    flex-direction: column;
+    visibility: hidden;
+    margin-top: 17px;
+    width: 100%;
+    align-items: flex-start;
+    height: auto;
+    gap: 22px;
+  }
+
+  .navigation_menu-active {
+    visibility: visible;
+  }
+
+  .navigation__link {
+    border: none;
+    padding: 16px 0 16px;
+    color: #fff;
+  }
+
+  .dark-text {
+    color: #fff;
+  }
+
+  .navigation__header-btn {
+    height: 56px;
+    width: 100%;
+  }
+
+  .navigation-btn__container {
+    width: -webkit-fill-available;
+    justify-content: center;
+    border-color: #fff;
+  }
+}

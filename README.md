@@ -1,4 +1,16 @@
-# react-news-explorer
+# React + Vite
 
 **Description**
-A website that allows for the search of various news articles
+
+This is my News Explorer App, it was created using [newsApi](https://newsapi.org/docs/get-started), along with React & Vite as the base framework. 
+
+
+**Backend Code**
+
+The backend code  is currently stil n development.
+
+
+**Project Link**
+
+You can click this [Link](https://sourcloudii.github.io/react-news-explorer/) to open my project.
+

@@ -1,0 +1,160 @@
+.modal {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.modal_visible {
+  visibility: visible;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 430px;
+  max-height: 380px;
+  padding: 34px 36px 28px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.modal__close-btn {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: -45px;
+  right: -40px;
+}
+
+.modal__close-img {
+  width: 100%;
+  height: 100%;
+}
+
+.modal__title {
+  margin: 0;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  text-align: left;
+}
+
+.modal__children {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+  width: 100%;
+  margin: 22px 0 0;
+}
+
+.modal__label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: #2f71e5;
+  font-family: Inter;
+  font-size: 12px;
+  line-height: 100%;
+}
+
+.modal__input {
+  width: 100%;
+  height: 24px;
+  border: none;
+  border-bottom: 1px solid #d1d2d6;
+  font-family: Inter; /*How strange*/
+  font-size: 14px;
+}
+
+.modal__btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 12px 0 0;
+  position: relative;
+}
+
+.modal__error-msg {
+  color: #ff0000;
+  font-size: 12px;
+  margin: 4px 0 0;
+  width: 143px;
+  height: 14px;
+}
+
+.modal__error-msg_second {
+  position: absolute;
+  top: -25px;
+}
+
+.modal__btn {
+  width: 358px;
+  height: 64px;
+  border-radius: 100px;
+  border: none;
+  background-color: #2f71e5;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 5px 15px 0px #0e1a3933;
+  cursor: pointer;
+}
+
+.modal__or-text {
+  margin: 16px 0 0;
+  font-family: Inter; /*How strange*/
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.modal__or-text-btn {
+  cursor: pointer;
+  color: #2f71e5;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__content {
+    width: 430px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal {
+    background-color: transparent;
+    align-items: flex-end;
+    height: 92vh;
+    top: 72px;
+  }
+
+  .modal__content {
+    width: 288px;
+    max-height: none;
+    height: 100%;
+    padding: 16px 16px 0;
+  }
+
+  .modal__btn {
+    width: 288px;
+    height: 64px;
+  }
+
+  .modal__close-btn {
+    visibility: hidden;
+  }
+}
