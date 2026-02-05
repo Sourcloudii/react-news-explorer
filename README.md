@@ -7,7 +7,7 @@ This is my News Explorer App, it was created using [newsApi](https://newsapi.org
 
 **Backend Code**
 
-The backend code  is currently stil n development.
+The backend code  is currently still in development.
 
 
 **Project Link**
