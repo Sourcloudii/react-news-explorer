@@ -33,7 +33,7 @@ function App() {
   useEffect(() => {
     if (!activeModal) return;
 
-    const handleEscClose = (e) => e.key === "Escape" && handleCloseModal();
+    const handleEscClose = e => e.key === "Escape" && handleCloseModal();
 
     document.addEventListener("keydown", handleEscClose);
 
@@ -45,7 +45,7 @@ function App() {
     if (tkn) {
       auth
         .checkToken()
-        .then((res) => {
+        .then(res => {
           setIsLoggedIn(true);
           setUser(res.data);
         })
@@ -58,18 +58,21 @@ function App() {
 
     api
       .getItems()
-      .then((data) => setSavedArticles(data))
+      .then(data => setSavedArticles(data))
       .catch(console.error);
   }, [isLoggedIn]);
 
-  const handleSearchSubmit = (query) => {
+  const handleSearchSubmit = query => {
     setIsLoading(true);
     getNewsData(query, apiKey)
-      .then((res) => {
-        const articleKeyword = res.articles.map((article) => ({ ...article, keyword: query }));
+      .then(res => {
+        const articleKeyword = res.articles.map(article => ({
+          ...article,
+          keyword: query,
+        }));
         setArticles(articleKeyword);
       })
-      .catch((error) => {
+      .catch(error => {
         console.error(error);
       })
       .finally(() => {
@@ -82,13 +85,13 @@ function App() {
 
     auth
       .authorize({ email, password })
-      .then((data) => {
+      .then(data => {
         if (data.token) {
           setToken(data.token);
           return auth.checkToken(data.token);
         }
       })
-      .then((res) => {
+      .then(res => {
         setIsLoggedIn(true);
         setUser(res.data);
         handleCloseModal();
@@ -104,13 +107,13 @@ function App() {
       .then(() => {
         return auth.authorize({ email, password });
       })
-      .then((data) => {
+      .then(data => {
         if (data.token) {
           setToken(data.token);
           return auth.checkToken(data.token);
         }
       })
-      .then((res) => {
+      .then(res => {
         setIsLoggedIn(true);
         setUser(res.data);
         handleCloseModal();
@@ -118,20 +121,22 @@ function App() {
       .catch(console.error);
   };
 
-  const handleSaveArticle = (article) => {
+  const handleSaveArticle = article => {
     api
       .saveArticle(article, user._id)
-      .then((savedArticle) => {
-        setSavedArticles((prevArticles) => [...prevArticles, savedArticle]);
+      .then(savedArticle => {
+        setSavedArticles(prevArticles => [...prevArticles, savedArticle]);
       })
       .catch(console.error);
   };
 
-  const handleDeleteArticle = (articleId) => {
+  const handleDeleteArticle = articleId => {
     api
       .deleteArticle(articleId, user._id)
       .then(() => {
-        setSavedArticles((prevArticles) => prevArticles.filter((article) => article._id !== articleId));
+        setSavedArticles(prevArticles =>
+          prevArticles.filter(article => article._id !== articleId),
+        );
       })
       .catch(console.error);
   };
